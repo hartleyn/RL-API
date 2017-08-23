@@ -1,0 +1,33 @@
+<div *ngIf="item" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="item._id">Item Details</h2>
+    <h2 *ngIf="!item._id">New Item</h2>
+  </div>
+</div>
+<div *ngIf="item" class="row">
+  <form class="col-md-12">
+    <div class="form-group">
+      <label for="item-name">Name</label>
+      <input class="form-control" name="item-name" [(ngModel)]="item.name" placeholder="Name"/>
+    </div>
+    <div class="form-group">
+      <label for="item-class">Class</label>
+      <input class="form-control" name="item-class" [(ngModel)]="item.class" placeholder="Rare"/>
+    </div>
+    <div class="form-group">
+      <label for="item-type">Type</label>
+      <input class="form-control" name="item-type" [(ngModel)]="item.typee" placeholder="Topper"/>
+    </div>
+    <div class="form-group">
+      <label for="item-color">Color</label>
+      <input class="form-control" name="item-color" [(ngModel)]="item.color" placeholder="Saffron"/>
+    </div>
+    <div class="form-group">
+      <label for="item-certification">Certification</label>
+      <input class="form-control" name="item-certification" [(ngModel)]="item.certification" placeholder="Aviator"/>
+    </div>
+    <button class="btn btn-primary" *ngIf="!item._id" (click)="createItem(item)">Create</button>
+    <button class="btn btn-info" *ngIf="item._id" (click)="updateItem(item)">Update</button>
+    <button class="btn btn-danger" *ngIf="item._id" (click)="deleteItem(item._id)">Delete</button>
+  </form>
+</div>

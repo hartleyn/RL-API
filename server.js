@@ -65,7 +65,8 @@ app.post("/api/contacts" function(req, res) {
 		if (err) {
 			handleError(res, err.message, "Failed to create new item.");
 		} else {
-			res.status(201).json(doc.ops[0]);		}
+			res.status(201).json(doc.ops[0]);
+		}
 	}); 
 });
 
@@ -76,14 +77,36 @@ app.post("/api/contacts" function(req, res) {
  */
 
 app.get("/api/items/:id", function(req, res) {
-
+	db.collection(ITEMS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+		if (err) {
+			handleError(res, err.message, "Failed to get item.");
+		} else {
+			res.status(200).json(doc);
+		}
+	});
 });
 
 app.put("/api/items/:id", function(req, res) {
+	var update_doc = req.body;
+	delete update_doc._id;
 
+	db.collection(ITEMS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, update_doc, function(err, doc) {
+		if (err) {
+			handleError(res, err.message, "Failed to update item.");
+		} else {
+			update_doc._id = req.params.id;
+			res.status(200).json(doc);
+		}
+	});
 });
 
  app.delete("/api/items/:id", function(req, res) {
-
+ 	db.collection(ITEMS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+		if (err) {
+			handleError(res, err.message, "Failed to delete item.");
+		} else {
+			res.status(200).json(doc);
+		}
+	});
  });
 
