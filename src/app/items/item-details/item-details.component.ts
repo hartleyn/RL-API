@@ -33,8 +33,8 @@ export class ItemDetailsComponent {
 	}
 
 	deleteItem(item: Item): void {
-		this.item_service.deleteItem(item).then((deleted_item: Item) => {
-			this.deleteItem(deleted_item);
+		this.item_service.deleteItem(item_id).then((deleted_item_id: String) => {
+			this.deleteItem(deleted_item_id);
 		})
 	}
 }

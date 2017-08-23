@@ -20,7 +20,6 @@ export class ItemListComponent implements OnInit {
 		this.item_service
 			.getItems()
 			.then((items: Item[]) => {
-				return item;
 			});
 	}
 
@@ -50,7 +49,7 @@ export class ItemListComponent implements OnInit {
   	deleteItem = (item_id: String) => {
   		var idx = this.getIndexOfItem(item_id);
   		if (idx !== -1) {
-  			this.contacts.splice(idx, 1);
+  			this.items.splice(idx, 1);
   			this.selectItem(null);
   		}
   		return this.items;
