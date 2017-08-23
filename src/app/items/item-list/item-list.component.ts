@@ -20,7 +20,7 @@ export class ItemListComponent implements OnInit {
 		this.item_service
 			.getItems()
 			.then((items: Item[]) => {
-				return items;
+				return item;
 			});
 	}
 
@@ -30,7 +30,7 @@ export class ItemListComponent implements OnInit {
 	    });
   	}
 
-  	selectItem() {
+  	selectItem(item: Item) {
   		this.selected_item = item;
   	}
 
@@ -65,7 +65,7 @@ export class ItemListComponent implements OnInit {
   	updateItem = (item: Item) => {
   		var idx = this.getIndexOfItem(item._id);
   		if (idx !== -1) {
-  			this.contacts[idx] = item;
+  			this.items[idx] = item;
   			this.selectItem(item);
   		}
   		return this.items;
