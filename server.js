@@ -48,7 +48,7 @@ function handleError(res, reason, message,code) {
  *   POST: creates a new item
  */
 
-app.get("/api/contacts", function(req, res) {
+app.get("/api/items", function(req, res) {
 	db.collection(ITEMS_COLLECTION).find({}).toArray(function(err, docs) {
 		if (err) {
 			handleError(res, err.message, "Failed to get items.");
@@ -58,7 +58,7 @@ app.get("/api/contacts", function(req, res) {
 	});
 });
 
-app.post("/api/contacts", function(req, res) {
+app.post("/api/items", function(req, res) {
 	var new_item = req.body;
 
 	if (!req.body.name) {
