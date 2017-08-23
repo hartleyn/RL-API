@@ -35,7 +35,7 @@ export class ItemService {
 
 	// put("/api/contacts/:id")
 	updateItem(put_item: Item): Promise<void | Item> {
-		var put_URL = this.items_URL + '/' + put_item.id;
+		var put_URL = this.items_URL + '/' + put_item._id;
 		return this.http.put(put_URL, put_item)
 				   .toPromise()
 				   .then(response => response.json() as Item)
