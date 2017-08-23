@@ -10,7 +10,7 @@ export class ItemService {
 	constructor(private http: Http) {}
 
 	// get("/api/contacts")
-	getContacts(): Promise<void | Item[]> {
+	getItems(): Promise<void | Item[]> {
 		return this.http.get(this.items_URL)
 				   .toPromise()
 				   .then(response => response.json() as Item[])
@@ -26,7 +26,7 @@ export class ItemService {
 	}
 
 	// delete("/api/items/:id")
-	deleteContact(del_item_id: String): Promise<void | String> {
+	deleteItem(del_item_id: String): Promise<void | String> {
 		return.this.http.delete(this.items_URL + '/' + del_item_id)
 				   .toPromise()
 				   .then(response => response.json() as String)

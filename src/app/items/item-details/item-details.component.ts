@@ -28,13 +28,13 @@ export class ItemDetailsComponent {
 
 	updateItem(item: Item): void {
 		this.item_service.updateItem(item).then((updated_item: Item) => {
-			this.updateItem(updated_item);
-		})
+			this.updateHandler(updated_item);
+		});
 	}
 
-	deleteItem(item: Item): void {
+	deleteItem(item_id: String): void {
 		this.item_service.deleteItem(item_id).then((deleted_item_id: String) => {
-			this.deleteItem(deleted_item_id);
-		})
+			this.deleteHandler(deleted_item_id);
+		});
 	}
 }
