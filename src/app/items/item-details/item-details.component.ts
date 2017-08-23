@@ -7,7 +7,7 @@ import { ItemService } from '../item.service';
   templateUrl: './item-details.component.html',
   styleUrls: ['./item-details.component.css']
 })
-export class ItemDetailsComponent implements OnInit {
+export class ItemDetailsComponent {
 	@Input()
 	item: Item;
 
@@ -32,7 +32,7 @@ export class ItemDetailsComponent implements OnInit {
 		})
 	}
 
-	updateItem(item: Item): void {
+	deleteItem(item: Item): void {
 		this.item_service.deleteItem(item).then((deleted_item: Item) => {
 			this.deleteItem(deleted_item);
 		})

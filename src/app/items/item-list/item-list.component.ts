@@ -6,7 +6,7 @@ import { ItemDetailsComponent } from '../item-details/item-details.component';
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.css']
+  styleUrls: ['./item-list.component.css'],
   providers: [ItemService]
 })
 export class ItemListComponent implements OnInit {
@@ -36,11 +36,11 @@ export class ItemListComponent implements OnInit {
 
   	createNewItem() {
   		var item: Item = {
-  			name: '';
-  			class: '';
-  			type: '';
-  			color: '';
-  			certification: '';
+  			name: '',
+  			class: '',
+  			type: '',
+  			color: '',
+  			certification: ''
   		}
 
   		// By default, a newly-created item will have the selected state.
@@ -56,7 +56,7 @@ export class ItemListComponent implements OnInit {
   		return this.items;
   	}
 
-  	addItem(item: Item) => {
+  	addItem = (item: Item) => {
   		this.items.push(item);
   		this.selectItem(item);
   		return this.items;
