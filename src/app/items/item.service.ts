@@ -19,7 +19,7 @@ export class ItemService {
 
 	// post("/api/items")
 	createItem(new_item: Item): Promise<void | Item> {
-		return.this.http.post(this.items_URL, new_item)
+		return this.http.post(this.items_URL, new_item)
 				   .toPromise()
 				   .then(response => response.json() as Item)
 				   .catch(this.handleError);
@@ -27,7 +27,7 @@ export class ItemService {
 
 	// delete("/api/items/:id")
 	deleteItem(del_item_id: String): Promise<void | String> {
-		return.this.http.delete(this.items_URL + '/' + del_item_id)
+		return this.http.delete(this.items_URL + '/' + del_item_id)
 				   .toPromise()
 				   .then(response => response.json() as String)
 				   .catch(this.handleError)
