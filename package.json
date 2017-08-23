@@ -1,6 +1,9 @@
 {
   "name": "rocket-league-trader",
   "version": "0.0.0",
+  "engines": {
+    "node": "6.11.2"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",

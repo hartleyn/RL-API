@@ -8,6 +8,10 @@ var ITEMS_COLLECTION = "items";
 var app = express();
 app.use(bodyParser.json());
 
+// Create link to Angular build directory
+var dist_dir = __dirname + "/dist/";
+app.use(express.static(dist_dir));
+
 
 // Create a database variable outside of the database connection 
 // callback to reuse the conection in your app.
@@ -54,7 +58,7 @@ app.get("/api/contacts", function(req, res) {
 	});
 });
 
-app.post("/api/contacts" function(req, res) {
+app.post("/api/contacts", function(req, res) {
 	var new_item req.body;
 
 	if (!req.body.name) {
