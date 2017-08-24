@@ -24,13 +24,13 @@
 			        	console.log(err);
 			        }
 
-			        var res = jquery.parseJSON(data2)
+			        var res = jQuery.parseJSON(data2)
 
 			        $.each(res, function (key, value) {
 					  var obj = jQuery.parseJSON(value);
 					  $("#drop").prepend("<ul><li>"+ obj.name +"</li><li>"+ obj.class +"</li><li>"+ obj.type +"</li><li>"+ obj.certification +"</li><li>"+ obj.color +"</li></ul>")
 					});
-					
+
 			        console.log(data2);
 		        
 		       	}
