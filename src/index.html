@@ -24,14 +24,13 @@
 			        	console.log(err);
 			        }
 
+			        var res = jquery.parseJSON(data2)
 
-			        var name = String(data2[0].name);
-			        var item_class = data2[0].class;
-			        var type = data2[0].type;
-			        var cert = data2[0].certification;
-			        var color =  data2[0].color;
-
-			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+ type +"</li><li>"+ cert +"</li><li>"+ color +"</li></ul>")
+			        $.each(res, function (key, value) {
+					  var obj = jQuery.parseJSON(value);
+					  $("#drop").prepend("<ul><li>"+ obj.name +"</li><li>"+ obj.class +"</li><li>"+ obj.type +"</li><li>"+ obj.certification +"</li><li>"+ obj.color +"</li></ul>")
+					});
+					
 			        console.log(data2);
 		        
 		       	}
