@@ -22,9 +22,15 @@
 		      	success: function(err, data){
 			        if (err) {
 			        	console.log(err);
-			        } 
-			        
-			        $("#drop").prepend("<ul><li>"+ data.[0].name +"</li><li>"+ data.[0].class +"</li><li>"+ data.[0].type +"</li><li>"+ data.[0].certification +"</li><li>"+ data.[0].color +"</li></ul>")
+			        }
+
+			        var name = data[0].name;
+			        var item_class = data[0].class;
+			        var type = data[0].type;
+			        var cert = data[0].certification;
+			        var color =  data[0].color;
+
+			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+ type +"</li><li>"+ cert +"</li><li>"+ color +"</li></ul>")
 			        console.log(data);
 		        
 		       	}
