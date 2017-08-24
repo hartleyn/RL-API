@@ -24,6 +24,7 @@
 			        	console.log(err);
 			        } 
 			        
+			        $("#drop").prepend("<ul><li>"+ data.name +"</li><li>"+ data.class +"</li><li>"+ data.type +"</li><li>"+ data.certification +"</li><li>"+ data.color +"</li></ul>")
 			        console.log(data);
 		        
 		       	}
@@ -32,6 +33,8 @@
 		});
 	</script>
 	<app-root></app-root>
+
+	<div id="drop"></div>
 	
 </body>
 </html>
