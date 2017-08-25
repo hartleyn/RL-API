@@ -20,22 +20,25 @@
 		       	type:"GET",
 		       	dataType:"JSON",
 		       	url:"https://gentle-sands-52657.herokuapp.com/api/items",
-		      	success: function(err, data2, status){
+		      	success: function(err, data2){
 			        if (err) {
 			        	console.log(err);
 			        }
 
-			        var name = data2[0]["name"];
+			        var obj = jQuery.parseJSON(data2);
+
+			        var name = obj.name;
 			        var item_class = data2[0].class;
 			        var type = data2[0].type;
 			        var cert = data2[0].certification;
 			        var color =  data2[0].color;
 
 			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+ type +"</li><li>"+ cert +"</li><li>"+ color +"</li></ul>")
-			        
-			        console.log(status);
+
 			        console.log(data2);
 			        console.log(data2[0]);
+			        console.log(obj);
+			        console.log(name);
 		        
 		       	}
 		    });
