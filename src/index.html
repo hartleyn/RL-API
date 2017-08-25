@@ -28,12 +28,17 @@
 			        var cert = data2[0].certification;
 			        var color =  data2[0].color;
 
-			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+  type +"</li><li>"+ if(cert!=null) {cert} +"</li><li>"+ if(color!=null) {color} +"</li></ul>")
+			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+  type +"</li><li>"+ cert +"</li>");
 
-			        console.log(data2);
-			        console.log(data2[0].name);
-			        console.log(data2[0]);
-			        console.log(name);
+			        if(cert) {
+			        	$("#drop").prepend("<li>"+ cert +"</li>");
+			        }
+
+			        if(color) {
+			        	$("#drop").prepend("<li>"+ color +"</li>");
+			        }
+
+			        $("#drop").prepend("</ul>");
 		        
 		       	}
 		    });
