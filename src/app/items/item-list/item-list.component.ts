@@ -9,6 +9,7 @@ import { ItemDetailsComponent } from '../item-details/item-details.component';
   styleUrls: ['./item-list.component.css'],
   providers: [ItemService]
 })
+
 export class ItemListComponent implements OnInit {
 
 	items: Item[]
@@ -20,6 +21,9 @@ export class ItemListComponent implements OnInit {
 		this.item_service
 			.getItems()
 			.then((items: Item[]) => {
+        this.items = contacts.map((item) => {
+          return item;
+        });
 			});
 	}
 
