@@ -25,9 +25,7 @@
 			        	console.log(err);
 			        }
 
-			        var obj = jQuery.parseJSON(data2);
-
-			        var name = obj[0].name;
+			        var name = data2.success[0].name;
 			        var item_class = data2[0].class;
 			        var type = data2[0].type;
 			        var cert = data2[0].certification;
@@ -36,7 +34,7 @@
 			        $("#drop").prepend("<ul><li>"+ name +"</li><li>"+ item_class +"</li><li>"+ type +"</li><li>"+ cert +"</li><li>"+ color +"</li></ul>")
 
 			        console.log(data2);
-			        console.log(data2[0]);
+			        console.log(data2.success[0]);
 			        console.log(obj);
 			        console.log(name);
 		        
