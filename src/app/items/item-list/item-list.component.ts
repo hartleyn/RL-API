@@ -21,7 +21,7 @@ export class ItemListComponent implements OnInit {
 		this.item_service
 			.getItems()
 			.then((items: Item[]) => {
-        this.items = contacts.map((item) => {
+        this.items = items.map((item) => {
           return item;
         });
 			});
