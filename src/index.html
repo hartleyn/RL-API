@@ -20,10 +20,8 @@
 		       	type:"GET",
 		       	dataType:"JSON",
 		       	url:"https://gentle-sands-52657.herokuapp.com/api/items",
-		      	success: function(err, data2){
-			        if (err) {
-			        	console.log(err);
-			        }
+		      	success: function(data2){
+	
 
 			        var name = data2[0].name;
 			        var item_class = data2[0].class;
